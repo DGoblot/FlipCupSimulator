@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://d1bhhhf32u8cv"]
+
+[ext_resource type="Script" path="res://Scene/Main.gd" id="1_duh51"]
+[ext_resource type="PackedScene" uid="uid://th0rw8wp1iyu" path="res://Object/Table.tscn" id="1_kf143"]
+[ext_resource type="PackedScene" uid="uid://dnwg6bu6rksbn" path="res://Object/Cup.tscn" id="2_kpc6k"]
+[ext_resource type="PackedScene" uid="uid://crx00b2tnffh1" path="res://Object/Jauge.tscn" id="4_ey7je"]
+[ext_resource type="PackedScene" uid="uid://c2emtggro5flp" path="res://Object/Fleche.tscn" id="4_lmgfj"]
+
+[sub_resource type="GDScript" id="GDScript_xhcm0"]
+script/source = "extends Area2D
+
+var body
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wb6t"]
+size = Vector2(22.4669, 90.7931)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_duh51")
+cup_scene = ExtResource("2_kpc6k")
+jauge_scene = ExtResource("4_ey7je")
+fleche_scene = ExtResource("4_lmgfj")
+
+[node name="Table" parent="." instance=ExtResource("1_kf143")]
+position = Vector2(637, 770)
+scale = Vector2(2.53284, 3.34862)
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(9.55636, 10.5078)
+script = SubResource("GDScript_xhcm0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(54.8326, 19.3208)
+scale = Vector2(4.07928, 1)
+shape = SubResource("RectangleShape2D_8wb6t")

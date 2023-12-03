@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnwg6bu6rksbn"]
+
+[ext_resource type="Texture2D" uid="uid://ct1efuya4pt22" path="res://Assets/Cup.png" id="1_bnfb7"]
+[ext_resource type="Texture2D" uid="uid://dmi2pkkjj3a8e" path="res://Assets/Fleche.png" id="2_cowaj"]
+[ext_resource type="Texture2D" uid="uid://d1h37tyelgd7" path="res://Assets/Barre.png" id="3_nxo4v"]
+
+[sub_resource type="GDScript" id="GDScript_jyl7n"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready(): 
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ol3fl"]
+size = Vector2(11.2938, 25.4092)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjogm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75nqf"]
+
+[node name="Cup" type="RigidBody2D"]
+script = SubResource("GDScript_jyl7n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -11)
+scale = Vector2(0.35099, 0.383919)
+texture = ExtResource("1_bnfb7")
+
+[node name="jauge_angle" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.469, 0.513)
+
+[node name="Sprite2D" type="Sprite2D" parent="jauge_angle"]
+position = Vector2(0, -335.283)
+scale = Vector2(0.558808, 0.558808)
+texture = ExtResource("2_cowaj")
+
+[node name="jauge_rot" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.469, 0.513)
+
+[node name="Node2D" type="Node2D" parent="jauge_rot"]
+rotation = -0.610865
+
+[node name="Sprite2D" type="Sprite2D" parent="jauge_rot/Node2D"]
+position = Vector2(0, 335.283)
+rotation = 1.5708
+scale = Vector2(0.558808, 0.558808)
+texture = ExtResource("3_nxo4v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -33)
+rotation = -3.14159
+scale = Vector2(5.84336, 0.412275)
+shape = SubResource("RectangleShape2D_ol3fl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(-0.999985, -24)
+scale = Vector2(5.44532, -0.622537)
+shape = SubResource("RectangleShape2D_ol3fl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="."]
+position = Vector2(2.78224e-07, -6.05311)
+rotation = -3.14159
+scale = Vector2(4.54224, -0.389378)
+shape = SubResource("RectangleShape2D_ol3fl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(1.4856, 3.76156)
+shape = SubResource("RectangleShape2D_pjogm")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+scale = Vector2(2.30814, 0.466812)
+shape = SubResource("RectangleShape2D_75nqf")
