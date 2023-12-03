@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dnwg6bu6rksbn"]
+
+[ext_resource type="Texture2D" uid="uid://ct1efuya4pt22" path="res://Assets/Cup.png" id="1_bnfb7"]
+[ext_resource type="Texture2D" uid="uid://dmi2pkkjj3a8e" path="res://Assets/Fleche.png" id="2_cowaj"]
+
+[sub_resource type="GDScript" id="GDScript_jyl7n"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready(): 
+	pass
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Cup" type="RigidBody2D"]
+script = SubResource("GDScript_jyl7n")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 23)
+scale = Vector2(0.588396, 0.649702)
+build_mode = 1
+polygon = PackedVector2Array(34, 65, -35, 65, -82, -93, 81, -93)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.469, 0.513)
+texture = ExtResource("1_bnfb7")
+
+[node name="Vide" type="Node2D" parent="."]
+visible = false
+scale = Vector2(0.469, 0.513)
+
+[node name="Sprite2D" type="Sprite2D" parent="Vide"]
+position = Vector2(0, -335.283)
+scale = Vector2(0.558808, 0.558808)
+texture = ExtResource("2_cowaj")

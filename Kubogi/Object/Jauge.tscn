@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://crx00b2tnffh1"]
+
+[ext_resource type="Texture2D" uid="uid://eyoa7lmjppbw" path="res://Assets/Jauge.png" id="1_s84bw"]
+[ext_resource type="Texture2D" uid="uid://d1h37tyelgd7" path="res://Assets/Barre.png" id="2_bqo16"]
+
+[node name="Jauge" type="Sprite2D"]
+position = Vector2(0, -90)
+scale = Vector2(0.498235, 0.789777)
+texture = ExtResource("1_s84bw")
+
+[node name="Barre" type="Sprite2D" parent="."]
+position = Vector2(0, 113.956)
+scale = Vector2(0.466019, 0.305556)
+texture = ExtResource("2_bqo16")

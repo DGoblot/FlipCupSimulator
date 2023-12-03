@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2emtggro5flp"]
+
+[ext_resource type="Texture2D" uid="uid://dmi2pkkjj3a8e" path="res://Assets/Fleche.png" id="1_uwvdg"]
+
+[node name="Fleche" type="Sprite2D"]
+scale = Vector2(0.314074, 0.314074)
+texture = ExtResource("1_uwvdg")
